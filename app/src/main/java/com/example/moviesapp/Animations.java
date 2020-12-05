@@ -9,7 +9,7 @@ import android.widget.TextView;
 public class Animations {
 
     @SuppressLint("ClickableViewAccessibility")
-    public static void itemAnimate(ImageView imageView, TextView textView, int degree, int duration){
+    public static void itemAnimate(ImageView imageView, TextView textView,TextView textView2, int degree, int duration){
                     imageView.setOnTouchListener(new View.OnTouchListener() {
                         @SuppressLint("ClickableViewAccessibility")
                         @Override
@@ -26,12 +26,18 @@ public class Animations {
                                         textView.animate().withLayer()
                                                 .rotationY(degree)
                                                 .setDuration(duration).start();
+                                        textView2.animate().withLayer()
+                                                .rotationY(degree)
+                                                .setDuration(duration).start();
                                     }
                                     if (x <= imageView.getWidth() / 3) {  // нажатие на левую часть view
                                         imageView.animate().withLayer()
                                                 .rotationY(-degree)
                                                 .setDuration(duration).start();
                                         textView.animate().withLayer()
+                                                .rotationY(-degree)
+                                                .setDuration(duration).start();
+                                        textView2.animate().withLayer()
                                                 .rotationY(-degree)
                                                 .setDuration(duration).start();
                                     }
@@ -42,12 +48,18 @@ public class Animations {
                                         textView.animate().withLayer()
                                                 .rotationX(degree)
                                                 .setDuration(duration).start();
+                                        textView2.animate().withLayer()
+                                                .rotationX(degree)
+                                                .setDuration(duration).start();
                                     }
                                     if (y >= imageView.getHeight() / 3 * 2) {  // нажатие на нижнюю часть view
                                         imageView.animate().withLayer()
                                                 .rotationX(-degree)
                                                 .setDuration(duration).start();
                                         textView.animate().withLayer()
+                                                .rotationX(-degree)
+                                                .setDuration(duration).start();
+                                        textView2.animate().withLayer()
                                                 .rotationX(-degree)
                                                 .setDuration(duration).start();
                                     }
@@ -61,6 +73,10 @@ public class Animations {
                                             .rotationX(0)
                                             .setDuration(1800).start();
                                     textView.animate().withLayer()
+                                            .rotationY(0)
+                                            .rotationX(0)
+                                            .setDuration(1800).start();
+                                    textView2.animate().withLayer()
                                             .rotationY(0)
                                             .rotationX(0)
                                             .setDuration(1800).start();

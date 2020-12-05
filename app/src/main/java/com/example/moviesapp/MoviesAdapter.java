@@ -49,15 +49,17 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
         private TextView title;
         private ImageView image;
+        private TextView title2;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.movies_title);
+            title2 = itemView.findViewById(R.id.movies_opened);
             image = itemView.findViewById(R.id.movies_iv);
             image.setOnClickListener(view -> {
                 listener.onClick();
             });
-            Animations.itemAnimate(image,title,10,500);
+            Animations.itemAnimate(image,title,title2,10,500);
         }
     }
 
